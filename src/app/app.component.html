@@ -14,7 +14,8 @@
   </div>
 </nav>
 
-<app-inicio></app-inicio>
+<app-inicio [hidden]="!(seccion == 'inicio')" [data]="data" (AccionAvanzar)="avanzar($event)"></app-inicio>
+<app-tamanos [hidden]="!(seccion == 'size')"></app-tamanos>
 
 
 <div class="px-2 py-2 position-fixed end-0 bottom-0">

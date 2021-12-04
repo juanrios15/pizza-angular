@@ -9,6 +9,9 @@ import { TamanosComponent } from './tamanos/tamanos.component';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  public seccion: any;
+  public data: any;
+  delivery: boolean
   title = 'pizzafront';
   faBars = faBars;
   faPlus = faPlus;
@@ -19,9 +22,18 @@ export class AppComponent {
   @ViewChild(TamanosComponent, {static: true}) _TamanosComponent: TamanosComponent;
 
   constructor() {
-
+    this.delivery = true
+    this.seccion = "inicio";
+    this.data = {
+      delivery: true
+    }
   }
   ngOnInit() {
 
   }
+  avanzar(event) {
+    this.seccion = "size"
+    console.log(event);
+
+}
 }

@@ -12,7 +12,8 @@
 <div class="container-fluid mh-100 d-flex align-items-center justify-content-center">
   <div class="row px-3">
     <div class="col-6 px-3 py-3">
-        <button type="button" class="btn pt-3 shadow" style="border-color: #f11; color: #f11; background-color: white;">
+        <button type="button" class="btn pt-3 shadow" style="border-color: #f11; color: #f11; background-color: white;"
+                (click)="avanzar(true)">
           <div class="row">
             <fa-icon [icon]="faBicycle" size="3x"></fa-icon>
           </div>
@@ -22,7 +23,8 @@
         </button>
     </div>
     <div class="col-6 px-3 py-3">
-        <button type="button" class="btn pt-3 shadow" style="border-color: #f11; color: #f11; background-color: white; ">
+        <button type="button" class="btn pt-3 shadow" style="border-color: #f11; color: #f11; background-color: white; "
+                (click)="avanzar(false)">
           <div class="row">
             <fa-icon [icon]="faMapMarkerAlt" size="3x"></fa-icon>
           </div>
