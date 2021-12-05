@@ -1,0 +1,15 @@
+.texto-principal {
+  color: #f11;
+}
+
+.bordes-principal {
+  border-color: #f11 !important;
+}
+
+.color-principal {
+  color: #f11 !important;
+}
+
+.cursor-seleccionar {
+  cursor: pointer !important
+}

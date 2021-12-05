@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { TamanosComponent } from './tamanos/tamanos.component';
 import { AppRoutingModule } from './app-routing.module';
 import { InicioComponent } from './inicio/inicio.component';
+import { MenusComponent } from './menus/menus.component';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import { InicioComponent } from './inicio/inicio.component';
     AppComponent,
     TamanosComponent,
     InicioComponent,
+    MenusComponent,
   ],
   imports: [
     BrowserModule,

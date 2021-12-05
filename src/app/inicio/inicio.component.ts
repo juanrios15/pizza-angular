@@ -29,7 +29,7 @@ export class InicioComponent implements OnInit {
     );
   }
   avanzar(delivery) {
-    let data: any = {domicilio: delivery}
+    let data = delivery
     this.AccionAvanzar.emit(data);
 
   }

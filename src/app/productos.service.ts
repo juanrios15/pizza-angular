@@ -11,4 +11,7 @@ export class ProductosService {
     return this.http.get<any>('http://127.0.0.1:8000/api/portadas/list');
 
   }
+  listarTamanos() {
+    return this.http.get<any>('http://127.0.0.1:8000/api/tamanos/list');
+  }
 }

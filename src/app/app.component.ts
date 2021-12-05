@@ -25,15 +25,38 @@ export class AppComponent {
     this.delivery = true
     this.seccion = "inicio";
     this.data = {
-      delivery: true
+      delivery: true,
+      pizzas: []
     }
   }
   ngOnInit() {
-
+    let pizza = {
+      tamano: {}
+    };
+    this.data.pizzas.push(pizza)
   }
   avanzar(event) {
     this.seccion = "size"
-    console.log(event);
+    this.data.delivery = event
+    console.log(this.data);
 
 }
+  avanzarMenu (event) {
+    this.data.pizzas[0].tamano = event
+    console.log(this.data);
+    this.seccion = "menus"
+
+  }
+  accionAtrasTamanos(event) {
+    this.seccion = "inicio"
+  }
+  avanzarArmaTuPizza(event) {
+
+  }
+  avanzarTradicional(event) {
+
+  }
+  accionAtrasMenus(event) {
+    this.seccion = "size"
+  }
 }
