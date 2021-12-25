@@ -1,1 +1,63 @@
-<p>menus works!</p>
+<div class="container pt-2">
+  <div class="row pt-2" style="color:#444">
+    <div class="col-2 text-center cursor-seleccionar" (click)="atras()">
+      <fa-icon [icon]="faArrowLeft" size="lg"></fa-icon>
+    </div>
+    <div class="col-10">
+      <h4>Selecciona una opción</h4>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <hr class="px-2 color-principal my-2" >
+</div>
+<br>
+<div class="container text-center px-3">
+  <div class="row px-3 py-3">
+    <div class="col-6 offset-3">
+      <button class="btn py-3 shadow bordes-principal color-principal" (click)="avanzarArmaPizza(mitadDiferente)">
+        <h1>
+          ARMA TU PIZZA!
+        </h1>
+      </button>
+    </div>
+  </div>
+  <div class="row px-3 py-3">
+    <div class="col-6 offset-3">
+      <button class="btn py-3 shadow bordes-principal color-principal" (click)="avanzarMenuTradicional(mitadDiferente)">
+        <h2>
+          <fa-icon [icon]="faPizzaSlice" size="lg"></fa-icon>
+        </h2>
+        <h2>
+          MENÚ CLASICO
+        </h2>
+      </button>
+    </div>
+  </div>
+</div>
+<br>
+<div class="container">
+  <div class="row px-3 bg-dark text-white py-1" >
+    <div class="form-check form-switch d-flex justify-content-center">
+
+        <input class="form-check-input fs-5" type="checkbox" id="mitadDiferente" [checked]="mitadDiferente"
+        (change)="mitadDiferente = !mitadDiferente">
+        <label class="form-check-label fs-5" for="mitadDiferente"> &nbsp; Mitad Diferente?</label>
+
+    </div>
+  </div>
+</div>
+<div class="container py-3 px-3">
+  <div class="row text-center mx-3">
+    <div class="col-12">
+      <button class="btn" (click)="atras()">
+        <div class="row">
+          <fa-icon [icon]="faArrowAltCircleLeft" size="3x"></fa-icon>
+        </div>
+        <div class="row px-0 align-items-end pt-2" >
+          <h6>Volver</h6>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>

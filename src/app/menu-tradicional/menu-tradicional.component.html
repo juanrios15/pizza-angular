@@ -1,0 +1,43 @@
+<div class="container pt-2">
+  <div class="row pt-2" style="color:#444">
+    <div class="col-2 text-center cursor-seleccionar" (click)="atras()">
+      <fa-icon [icon]="faArrowLeft" size="lg"></fa-icon>
+    </div>
+    <div class="col-10">
+    <h4 *ngIf="!segundo_menu">Selecciona una opción</h4>
+    <h4 *ngIf="segundo_menu">Escoge la otra mitad</h4>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <hr class="color-principal my-2" >
+</div>
+<br>
+<div class="container">
+  <div class="row px-0">
+    <div *ngFor="let item of menu_tradicional;let index = index"  class="col-6 col-md-2 px-0">
+      <div class="card bg-dark text-white cursor-seleccionar" (click)="seleccionarPizza(item)" >
+        <img src="{{item.imagen}}" style="height: 140px;" class="card-img-top" alt="...">
+        <div class="card-body py-2" style="height: 110px">
+          <h5 class="py-0">{{item.nombre}}</h5>
+          <p class="card-text" style="font-size: 0.8rem;">{{item.descripcion}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container py-3 px-3">
+  <div class="row text-center mx-3">
+    <div class="col-12">
+      <button class="btn" (click)="atras()">
+        <div class="row">
+          <fa-icon [icon]="faArrowAltCircleLeft" size="3x"></fa-icon>
+        </div>
+        <div class="row px-0 align-items-end pt-2" >
+          <h6>Volver</h6>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#f11">
   <div class="container-fluid">
-    <a class="navbar-brand text-white" href="#">LogoPizza</a>
+    <a class="navbar-brand text-white" href="#">ArmaTuPizza</a>
     <button class="navbar-toggler" style="border-color: white;" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <fa-icon [icon]="faPizzaSlice" class="text-white"></fa-icon>
     </button>
@@ -18,6 +18,16 @@
 <app-tamanos [hidden]="!(seccion == 'size')" (AccionAtras)="accionAtrasTamanos($event)" (AccionAvanzar)="avanzarMenu($event)"></app-tamanos>
 <app-menus [hidden]="!(seccion == 'menus')" (AccionAtras)="accionAtrasMenus($event)"
 (AccionAvanzarArma)="avanzarArmaTuPizza($event)" (AccionAvanzarTrad)="avanzarTradicional($event)"></app-menus>
+<app-arma-pizza-tipos [hidden]="!(seccion == 'arma_tu_pizza')" (AccionAtras)="accionAtrasTiposArma($event)"
+(AvanzarResumen)="avanzarResumenArma($event)" (SegundaMitad)="segundaMitadArmaPizza($event)"></app-arma-pizza-tipos>
+<app-menu-tradicional [hidden]="!(seccion == 'menu_clasico')" (AccionAtras)="accionAtrasMenuTrad($event)"
+(AvanzarResumen)="avanzarResumen($event)" (SegundaMitad)="seleccionarSegundaMitad($event)"></app-menu-tradicional>
+<app-resumen-pedido [data]="data" [hidden]="!(seccion == 'resumen-pedido')"
+(AvanzarOtrosProductos)="avanzarOtrosProductos($event)" (AgregarOtraPizza)="agregarOtraPizza($event)"
+(FinalizarPedido)="finalizarPedido($event)"></app-resumen-pedido>
+<app-otros-productos [hidden]="!(seccion == 'otros_productos')" (AccionAtras)="accionAtrasOtros($event)"
+(AvanzarOtros)="avanzarResumenOtros($event)"></app-otros-productos>
+<app-finalizar-pedido [data]="data" [hidden]="!(seccion == 'finalizar_pedido')"></app-finalizar-pedido>
 
 
 <div class="px-2 py-2 position-fixed end-0 bottom-0">

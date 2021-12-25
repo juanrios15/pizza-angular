@@ -1,0 +1,18 @@
+<p>finalizar-pedido works!</p>
+
+
+<form [formGroup]="pedido_form" (ngSubmit)="onSubmit()">
+
+  <label for="nombre_cliente">Nombre: </label>
+  <input id="nombre_cliente" type="text" formControlName="nombre_cliente">
+
+  <label for="direccion_cliente">Last Name: </label>
+  <input id="direccion_cliente" type="text" formControlName="direccion_cliente">
+
+  <label for="email">Email: </label>
+  <input id="email" type="text" formControlName="email">
+
+  <label for="telefono">Whatsapp: </label>
+  <input id="telefono" type="text" formControlName="telefono">
+  <button type="submit" [disabled]="!pedido_form.valid">Submit</button>
+</form>

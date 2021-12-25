@@ -18,6 +18,7 @@ export class TamanosComponent implements OnInit {
   faArrowLeft = faArrowLeft;
 
   constructor(private productosService: ProductosService) {
+
    }
 
   ngOnInit(): void {

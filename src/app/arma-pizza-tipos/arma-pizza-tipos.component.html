@@ -1,0 +1,72 @@
+<div class="container pt-2">
+  <div class="row pt-2" style="color:#444">
+    <div class="col-2 text-center cursor-seleccionar" (click)="atras()">
+      <fa-icon [icon]="faArrowLeft" size="lg"></fa-icon>
+    </div>
+    <div class="col-10">
+      <h4>Selecciona una opción</h4>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <hr class="px-2 color-principal my-2" >
+</div>
+<div class="container">
+  <div class="row text-center">
+    <div *ngFor="let val of tiposIngredientes;let index = index"  class="col-4 col-md-4 px-1" (click)="filtroTipo(val)">
+      <div *ngIf="val.checked" class="my-2 bg-success border rounded shadow py-1 bordes-principal cursor-seleccionar">
+            &nbsp;{{val.nombre}}
+      </div>
+      <div *ngIf="!val.checked" class="my-2 border rounded shadow py-1 bordes-principal cursor-seleccionar">
+            &nbsp;{{val.nombre}}
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <hr class="px-2 color-principal my-2" >
+</div>
+<div class="container">
+  <div class="row px-2 text-center">
+    <div *ngFor="let item of Ingredientes;let index = index"  class="col-4 col-md-4" (click)="seleccionar(item)">
+      <div *ngIf="item.checked" class="my-2 py-1 cursor-seleccionar bg-success">
+
+          <img src="{{item.imagen}}" style="height: 50px;" class="card-img-top" alt="...">
+            {{item.nombre}}
+
+      </div>
+      <div *ngIf="!item.checked" class="my-2 py-1 cursor-seleccionar">
+
+          <img src="{{item.imagen}}" style="height: 50px;" class="card-img-top" alt="...">
+            {{item.nombre}}
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container py-3 px-3">
+  <div class="row text-center mx-3">
+    <div class="col-12">
+      <button class="btn btn-primary" (click)="avanzar()">
+        <div class="row">
+          Agregar y avanzar
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+<div class="container py-3 px-3">
+  <div class="row text-center mx-3">
+    <div class="col-12">
+      <button class="btn" (click)="atras()">
+        <div class="row">
+          <fa-icon [icon]="faArrowAltCircleLeft" size="3x"></fa-icon>
+        </div>
+        <div class="row px-0 align-items-end pt-2" >
+          <h6>Volver</h6>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+

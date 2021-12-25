@@ -1,0 +1,101 @@
+<div class="container pt-2">
+  <div class="row pt-2" style="color:#444">
+    <div class="col-2 text-center cursor-seleccionar" (click)="atras()">
+      <fa-icon [icon]="faArrowLeft" size="lg"></fa-icon>
+    </div>
+    <div class="col-10">
+      <h4>Resumen</h4>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <hr class="px-2 color-principal my-2" >
+</div>
+
+
+<div class="container">
+  <table class="table">
+    <thead class="text-center">
+      <th scope="col">Descripción</th>
+      <th scope="col">Precio</th>
+      <th scope="col">Cantidad</th>
+    </thead>
+    <tr *ngFor="let item of data.pizzas;let index = index">
+      <td scope="row">
+        {{item.cantidad}}x Pizza
+        <span class="bg-dark px-0" *ngFor="let sabor of item.sabores;let index = index">
+          {{sabor.nombre}}
+        </span>
+        <span class="px-0" *ngFor="let ingre of item.ingredientes;let index = index">
+          {{ingre.nombre}}
+        </span>
+        {{item.tamano.nombre}}
+      </td>
+      <td>
+        $ {{item.subtotal}}
+      </td>
+      <td>
+        <div class="row px-0 mx-0" style="font-size: 0.9rem;">
+          <div class="col-2 d-flex align-items-center mx-0">
+            <span><fa-icon [icon]="faAngleDown"></fa-icon></span>
+          </div>
+          <div class="col-6 d-flex justify-content-center mx-0">
+            <input type="text" class="form-control" value="{{item.cantidad}}" disabled>
+          </div>
+          <div class="col-2 mx-0  d-flex align-items-center">
+            <span><fa-icon [icon]="faAngleUp"></fa-icon></span>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr *ngFor="let item of data.otros_productos;let index = index">
+      <th scope="row">
+        {{item.cantidad}}x {{item.nombre}}
+      </th>
+      <td>
+        $ {{item.precio | number}}
+      </td>
+      <td>
+        <div class="row px-0 mx-0" style="font-size: 0.9rem;">
+          <div class="col-2 d-flex align-items-center mx-0">
+            <span><fa-icon [icon]="faAngleDown"></fa-icon></span>
+          </div>
+          <div class="col-6 d-flex justify-content-center mx-0">
+            <input type="text" class="form-control" value="{{item.cantidad}}" disabled>
+          </div>
+          <div class="col-2 mx-0  d-flex align-items-center">
+            <span><fa-icon [icon]="faAngleUp"></fa-icon></span>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+<div class="container">
+  <div class="row text-center">
+    <h1> Subtotal: $ {{subtotal_pedido | number}}</h1>
+  </div>
+</div>
+<div class="container">
+  <hr class="px-2 color-principal my-2" >
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <button class="btn btn-danger" (click)="otrosProductos()" >
+        Agregar otros productos
+      </button>
+    </div>
+    <div class="col-6">
+      <button class="btn btn-primary" (click)="agregarOtraPizza()">
+        Agregar otra pizza
+      </button>
+    </div>
+  </div>
+  <div class="row py-3">
+    <button class="btn btn-primary" (click)="finalizarPedido()">
+      Finalizar Pedido
+    </button>
+  </div>
+</div>

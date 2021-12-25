@@ -1,0 +1,33 @@
+<div class="container pt-2">
+  <div class="row pt-2" style="color:#444">
+    <div class="col-2 text-center cursor-seleccionar" (click)="atras()">
+      <fa-icon [icon]="faArrowLeft" size="lg"></fa-icon>
+    </div>
+    <div class="col-10">
+    <h4>Selecciona una opción</h4>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <hr class="color-principal my-2" >
+</div>
+<br>
+<div class="container">
+  <div class="row px-3">
+    <div *ngFor="let item of otrosProductos;let index = index"  class="col-6 col-md-2 px-2 py-1">
+      <div class="card cursor-seleccionar" (click)="agregarOtroProducto(item)">
+        <img src="{{item.imagen}}" style="height: 90px;" class="card-img-top" alt="...">
+        <div class="card-body px-1 py-1">
+          <p class="card-text py-0 my-0 mx-0 px-0" style="font-size: 0.9rem;">{{item.nombre}}</p>
+          <p class="card-text py-0 my-0 mx-0 px-0 " style="font-size: 0.9rem;">
+            <fa-icon [icon]="faDolly"></fa-icon>
+            Precio:
+             <span class="color-principal">
+              $ {{item.precio}}
+             </span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

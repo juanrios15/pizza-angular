@@ -1,4 +1,4 @@
-<div class="container py-2">
+<div class="container pt-2">
   <div class="row pt-2" style="color:#444">
     <div class="col-2 text-center cursor-seleccionar" (click)="atras()">
       <fa-icon [icon]="faArrowLeft" size="lg"></fa-icon>
@@ -9,12 +9,12 @@
   </div>
 </div>
 <div class="container">
-  <hr class="px-2 color-principal" >
+  <hr class="px-2 color-principal my-2" >
 </div>
 <div class="container">
   <div class="row px-2 text-center">
     <div *ngFor="let item of tamanos;let index = index"  class="col-6 col-md-3">
-      <div class="mx-2 my-3 border rounded shadow py-1 bordes-principal cursor-seleccionar"
+      <div class="mx-2 my-2 border rounded shadow py-1 bordes-principal cursor-seleccionar"
       (click)="avanzarMenu(item)">
         <div class="form-check mx-3 py-1">
           <input class="form-check-input fs-5" type="radio" id="{{item.nombre}}"
